@@ -1,0 +1,214 @@
+:root {
+  --color-primary: rgba(72, 9, 122 , 69%);
+  --color-primary-focused: rgba(71, 9, 122, 0.601);
+  --color-secondary: rgba(255, 186, 61 , 70%);
+  --color-secondary-focused: rgba(255, 187, 61, 0.619);
+  --color-tertiary: rgba(217, 217, 217 , 100%);
+}
+
+body {
+  padding-top: 0;
+  background-image: url('../assets/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  background-color: var(--color-primary);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo{
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  height: 80%;
+}
+
+.header__button{
+  position: absolute;
+  background-color: var(--color-tertiary);
+  top: 30px;
+  left: 30px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_button_img{
+  width: 100%;
+}
+
+/*Body*/
+
+.inputContainer {
+  align-self: center;
+  width: 50%;
+}
+.inputContainer .postureFormContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  align-self: center;
+}
+
+.inputContainer .postureForm__field{
+  width: 60%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px 10px 15px;
+  margin-right: 20px;
+  outline:none;
+  font-family: 'Poppins';
+  transition:all 0.3s ease;
+  font-size: 1.2em;
+}
+
+.inputContainer .postureForm__field:focus{
+  outline: none;
+  border: none;
+  background-color: var(--color-primary-focused);
+}
+
+.inputContainer .postureForm__field::placeholder{
+  color: #c7c2c2;
+}
+
+.inputContainer .postureForm__button{
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+  width: 45px;
+  height: 45px;
+  outline:none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inputContainer .postureForm__button:hover{
+  background-color: var(--color-secondary-focused);
+}
+.postureForm__button .postureForm__button__image{
+  width: 100%
+}
+
+/*Sanscrit Translations*/ 
+.SanskritTranslation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  align-self: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px 0.01px rgba(106, 106, 106, 0.75);
+  padding: 10px 20px 10px 20px;
+  width: 70%;
+  font-family: 'Poppins';
+}
+
+h2{
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.description__text{
+  font-weight: 400;
+  font-size: 1.3em;
+  text-align: center;
+  background-color: var(--color-tertiary);
+  padding: 5px 10% 5px 10%;
+  border-radius: 30px;
+}
+
+.sanskritTranslation__title{
+  padding-top: 10px;
+}
+
+.morphemesTable td, th{
+  padding: 10px;
+  margin: 20px;
+  font-size: 1.2em;
+  
+}
+
+.morphemesTable td:hover, th:hover{
+  position: relative;
+  top:2px;
+}
+
+.morphemesTable{
+  border-collapse: separate;
+  border-spacing: 15px;
+  transition: all 0.3s ease;
+}
+
+.morphemesTable th{
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.3s ease; 
+}
+
+
+.morphemesTable td{
+  background-color: var(--color-tertiary);
+  border-radius: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/*English Spanish*/
+.EnlishSpanishContainer{
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 70%;
+  font-family: 'Poppins';
+}
+
+.TranslationContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  align-self: center;
+  background-color: var(--color-secondary);
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px 0.01px rgba(106, 106, 106, 0.75);
+  padding: 30px 20px 30px 20px;
+  width: 49%;
+  font-family: 'Poppins';
+}
+
+.TranslationContainer__result{
+  font-weight: 400;
+  font-size: 1.3em;
+  text-align: center;
+  background-color: white;
+  padding: 10px 5% 10px 5%;
+  width: 90%;
+  border-radius: 30px;
+  margin-top: 15px;
+}
+
+
+
