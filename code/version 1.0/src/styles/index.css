@@ -12,9 +12,89 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+}
+.main-content{
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/*Drawer*/
+.drawer {
+  height: 100vh;
+  position: fixed;
+  top: 0px; /* Height of the fixed navbar */
+  left: -350px; /* Set initially to hide the drawer */
+  width: 350px;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease-in-out;
+  background-image: url('../assets/drawer_bg.png'); /* Ruta de tu imagen */
+  background-size: cover; /* Para cubrir completamente el fondo del div */
+  background-position: center; /* Centrar la imagen en el div */
+}
+
+.drawer__image__container{
+  width: 100%;
+  background-color: var(--color-primary);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35vh;
+  border-radius: 0% 0% 45% 45%;
+}
+
+.drawer__image__bottom{
+  position: relative;
+  width: 100%;
+  top: 20%;
+  border-radius: 100%;
+  height: 10vh;
+  background-color: rgba(255, 187, 61, 0.619);
+}
+
+
+.drawer a {
+  color: rgb(0, 0, 0);
+}
+
+.drawer__image {
+  max-width: 300px;
+  height: min-content;
+  justify-self: center;
+  align-self: center;
+}
+
+.drawer__item{
+  font-family: 'Poppins';
+  font-size: 100px;
+  width: 100%;
+  padding: 80px;
+  text-align: center; 
+  margin-top: 8vh;
+}
+
+.nav-link:hover{
+  color: rgb(242, 234, 11);
+  transition: all 0.3s ease;
+  opacity: 1%;
+}
+
+.drawer__item hover{
+  color: rgb(41, 40, 40);
+}
+
+.drawer__item span{
+  font-family: 'Poppins';
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.drawer__item i{
+  width: 40px;
+  height: 40px;
 }
 
 .header{
@@ -32,18 +112,18 @@ body {
 }
 
 .header__button{
-  position: absolute;
+  position: relative;
+  right: 45%;
+  top: 30%;
   background-color: var(--color-tertiary);
-  top: 30px;
-  left: 30px;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   border: none;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
+
 
 .header_button_img{
   width: 100%;
