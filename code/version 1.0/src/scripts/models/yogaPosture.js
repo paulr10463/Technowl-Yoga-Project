@@ -1,3 +1,4 @@
+import {deleteMultipleSpaces} from '../utils.js'
 
 export default class YogaPosture {
     constructor(EnglishName, SanskritName, SpanishName, classification) {
@@ -8,9 +9,9 @@ export default class YogaPosture {
     }
 
     checkIfNameMatches(nameToSearch){
-        return this.EnglishName.toLowerCase() == nameToSearch.trim().toLowerCase()
-        || this.SpanishName.toLowerCase() == nameToSearch.trim().toLowerCase()
-        || this.SanskritName.toLowerCase() == nameToSearch.trim().toLowerCase();
+        return this.EnglishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
+        || this.SpanishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
+        || this.SanskritName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase();
     }
 
     getMorphemesByPosture(morphemesList){
@@ -20,7 +21,7 @@ export default class YogaPosture {
                 morphemesFound.push(morpheme)
             }
         }
-        return morphemesFound
+        return morphemesFound.reverse()
     }
 }
 

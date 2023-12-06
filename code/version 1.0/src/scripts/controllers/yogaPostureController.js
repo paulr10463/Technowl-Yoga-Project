@@ -3,9 +3,7 @@ export default class YogaPostureController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
-
         this.view.addYogaPostureHandler(this.searchYogaPosturesTranslations.bind(this));
-        //this.renderStocks();
     }
 
     searchYogaPosturesTranslations(postureNameToSearch){
