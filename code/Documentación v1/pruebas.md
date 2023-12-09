@@ -6,7 +6,7 @@ Integrantes:
 - Chalacama Erick
 - Román Paul
 - Salazar Santiago
-- Suntasig Dennys
+- Suntasig Ariel
 - Yánez David
 
 Versión: Primera
