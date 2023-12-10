@@ -28,3 +28,12 @@ Considerando esto, se puede apreciar que la clase YogaPostureController es el ne
 
 *Figura 2: Diagrama de clases del sistema de traducción*
 
+En la Figura 3 se puede observar una representación visual del diseño del proyecto. Esto se usa comúnmente en diseño gráfico y desarrollo de productos para dar una vista previa de cómo se verá el producto final para esta ocasion se uso para mostrar la version 1.0 del proyecto realizado. Los mockups pueden ser estáticos o interactivos, y suelen ser herramientas valiosas en el proceso de diseño para obtener retroalimentación antes de la implementación final. 
+
+![ Mockup del sistema ](assets/Mockup.png)
+
+*Figura 3: Mockup del sistema de traducción*
+
+Además, se adjunta el enlace donde se desarrollo el diseño del sistema de traducción:
+
+[ Mockup del sistema](https://www.figma.com/file/FCIhMwdpiagLvhLiKOsORq/Calidad-de-Software?type=design&node-id=0%3A1&mode=design&t=nZxJuCBgCuSAjgHC-1)
