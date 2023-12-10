@@ -36,7 +36,7 @@ Versión: Primera
 |**Contexto**|El usuario está en la página de inicio del traductor Yoghismo|
 |**Proceso**|1. El usuario ingresa una cadena de texto válida en el campo de búsqueda. <br/> 2. El usuario presiona el botón de búsqueda o la tecla enter.|
 |**Resultado esperado**|**Resultado Obtenido**|
-|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|
+|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|Se evidencian las traducciones y las palabras clave o morfemas de forma clara y ordenada.|
 
 |***Prueba 3***||
 |-|-|	
@@ -47,7 +47,7 @@ Versión: Primera
 |**Contexto**|El usuario tiene acceso al traductor Yoghismo en diferentes navegadores web como Google Chrome, Mozilla Firefox, y Microsoft Edge.|
 |**Proceso**|1. Acceder al traductor Yoghismo en cada uno de los navegadores mencionados. <br/> 2. Realizar una búsqueda con una entrada válida en cada navegador.|
 |**Resultado esperado**|**Resultado Obtenido**|
-|El software debe funcionar sin errores significativos en todos los navegadores probados, mostrando resultados precisos independientemente del navegador utilizado.|
+|El software debe funcionar sin errores significativos en todos los navegadores probados, mostrando resultados precisos independientemente del navegador utilizado.|Los resultados son independientes del navegado, se conserva la apariencia y la funcionalidad pero si existe variación en los tiempos de carga.|
 
 
 |***Prueba 4***||
