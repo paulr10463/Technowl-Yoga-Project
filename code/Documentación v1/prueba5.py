@@ -3,16 +3,19 @@ from selenium.webdriver.common.by import By
 from colorama import Fore, Style
 import time
 
-navegadores = ['Chrome', 'Firefox', 'Edge']  
+navegadores = ['Edge','Chrome','Firefox']  
 asana = 'Adho Mukha Svanasana'
 
 for nav in navegadores:
     if nav == 'Chrome':
-        driver = webdriver.Chrome()
-    elif nav == 'Firefox':
-        driver = webdriver.Firefox()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--enable-chrome-browser-cloud-management")
+        driver = webdriver.Chrome(options=chrome_options)
     elif nav == 'Edge':
         driver = webdriver.Edge()
+    elif nav == 'Firefox':
+        driver = webdriver.Firefox()
+
 
     driver.get("http://localhost:5173/")
     driver.maximize_window()
