@@ -72,4 +72,4 @@ Resultado esperado	El software debe funcionar sin errores significativos en todo
 
 |**Nro**|**Tipo**|**Descripción**|**Corregido**|
 |-|-|-|-|
-|**1**|Funcional - Chequeo|Al querer traducir el morfema "*Adho*" en el resultado en inglés se presenta "*Downward Facing Dog*", siendo que debería presentarse únicamente "*Down*"|**Sí***|
+|**1**|Funcional - Chequeo|Al querer traducir el morfema "*Adho*" en el resultado en inglés se presenta "*Downward Facing Dog*", siendo que debería presentarse únicamente "*Down*"|**Sí**|
