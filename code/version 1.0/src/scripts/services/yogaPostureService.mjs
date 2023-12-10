@@ -109,7 +109,7 @@ const yogaPosturesData = [
         "spanish": "postura"
     },
     {
-        "english": "Downward Facing Dog",
+        "english": "Down",
         "sanskrit": "Adho",
         "spanish": "abajo"
     },

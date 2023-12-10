@@ -46,102 +46,29 @@ Resultado esperado	El software debe funcionar sin errores significativos en todo
 
 
 
-|***Prueba 1***||
+|***Prueba 4***||
 |-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
+|**Identificador**|CP04|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba de búsqueda con caracteres especiales|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente términos en sánscrito que contienen caracteres especiales o acentuados.|
+|**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*Urdhva Mukhá Svanasana*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
 |**Resultado esperado**|**Resultado Obtenido**|
-|||
+|La página muestra mensaje de error que especifique que no se encontró la asana.|Se presenta una ventana flotante que indica "*No se encontró la postura buscada. Revisa el nombre.*"|
 
-|***Prueba 1***||
+|***Prueba 5***||
 |-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
+|**Identificador**|CP05|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba búsqueda por morfemas|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente la búsqueda por morfemas.|
+**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*Adho*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
 |**Resultado esperado**|**Resultado Obtenido**|
-|||
+|La página muestra la traducción únicamente de la asana en español y en inglés|La página muestra bien la traducción en español ("*abajo*"), pero en inglés muestra "*Downward Facing Dog*".|
 
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
+# Lista de defectos de calidad
 
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
-
-|***Prueba 1***||
-|-|-|
-|**Identificador**|CP01|
-|**Fecha**|6 de Diciembre del 2023|
-|**Nombre del caso**|Prueba sin entrada|
-|**Objetivo**||
-|**Contexto**||
-|**Proceso**||
-|**Resultado esperado**|**Resultado Obtenido**|
-|||
+|**Nro**|**Tipo**|**Descripción**|**Corregido**|
+|**1**|Funcional - Chequeo|Al querer traducir el morfema "*Adho*" en el resultado en inglés se presenta "*Downward Facing Dog*", siendo que debería presentarse únicamente "*Down*"|**Sí***|
