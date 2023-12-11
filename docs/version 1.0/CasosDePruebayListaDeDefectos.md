@@ -122,4 +122,4 @@ Versión: Primera
 |-|-|-|-|
 |**1**|Funcional - Chequeo|Al querer traducir el morfema "*Adho*" en el resultado en inglés se presenta "*Downward Facing Dog*", siendo que debería presentarse únicamente "*Down*".|**Sí**|
 |**2**|No Funcional - Mantenibilidad|Se tiene una mala convención respecto al nombre de "*yogaPosturesView.js*", ya que se manejan nombres en singular por lo que debería ser solo "*yogaPostureView.js*" .|**Sí**|
-|**3**|Funcional - Mantenibilidad|Se tiene un mal encapsulamiento dentro de "*yogaPostureService.mjs*" respecto a "yogaPostures" y "yogaMorphemes" que deberían ser privadas.|**Sí**|
+|**3**|Funcional - Mantenibilidad|Se tiene un mal encapsulamiento dentro de "*yogaPostureService.js*" respecto a "yogaPostures" y "yogaMorphemes" que deberían ser privadas.|**No**|

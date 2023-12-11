@@ -1,6 +1,6 @@
 // Aplicación (app.js)
 import YogaPostureService from './services/yogaPostureService.js';
-import YogaPosesView from './views/yogaPosturesView.js';
+import YogaPosesView from './views/yogaPostureView.js';
 import YogaPostureController from './controllers/yogaPostureController.js';
 //import YogaMorphemesView from './views/yogaMorphemesView.js';
 
