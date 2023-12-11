@@ -20,13 +20,31 @@ test('search tadasana name and return postura de la montania', () => {
 
   test('search posture name with spaces at the middle', () => {
     const yogaPostureService = new YogaPostureService();
-    const vrikshasanaPosture = yogaPostureService.getPostureByName('Ardha         Bhujangasana');
-    expect(vrikshasanaPosture.EnglishName).toBe('Half Cobra Pose');
+    const asanaPosture = yogaPostureService.getPostureByName('Ardha         Bhujangasana');
+    expect(asanaPosture.EnglishName).toBe('Half Cobra Pose');
   });
 
   test('search posture name with uppercase letters', () => {
     const yogaPostureService = new YogaPostureService();
-    const vrikshasanaPosture = yogaPostureService.getPostureByName('ARDHA BHUJANGASANA');
-    expect(vrikshasanaPosture.EnglishName).toBe('Half Cobra Pose');
+    const asanaPosture = yogaPostureService.getPostureByName('ARDHA BHUJANGASANA');
+    expect(asanaPosture.EnglishName).toBe('Half Cobra Pose');
+  });
+
+  test('search posture name with uppercase and Lowercase letters', () => {
+    const yogaPostureService = new YogaPostureService();
+    const asanaPosture = yogaPostureService.getPostureByName('ARdHa BhUJAngAsaNA');
+    expect(asanaPosture.EnglishName).toBe('Half Cobra Pose');
+  });
+
+  test('search posture name with special characters', () => {
+    const yogaPostureService = new YogaPostureService();
+    const asanaPosture = yogaPostureService.getPostureByName('ARdHa BhUJAngAsaNA.');
+    expect(asanaPosture).toBe(null);
+  });
+
+  test('blank search', () => {
+    const yogaPostureService = new YogaPostureService();
+    const asanaPosture = yogaPostureService.getPostureByName('');
+    expect(asanaPosture).toBe(null);
   });
   

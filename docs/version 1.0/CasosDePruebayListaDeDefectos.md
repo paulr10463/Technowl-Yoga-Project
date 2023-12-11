@@ -72,6 +72,50 @@ Versión: Primera
 |**Resultado esperado**|**Resultado Obtenido**|
 |La página muestra la traducción únicamente de la asana en español y en inglés|La página muestra bien la traducción en español ("*abajo*"), pero en inglés muestra "*Downward Facing Dog*".|
 
+|***Prueba 6***||
+|-|-|
+|**Identificador**|CP06|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba búsqueda con varios espacios|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente la búsqueda cuando existen varios espacios en blanco.|
+**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*&emsp;&emsp; vrikshasana &emsp;&emsp;*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
+|**Resultado esperado**|**Resultado Obtenido**|
+|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|La página muestra bien la traducción en español ("*Postura del árbol*"), y en inglés muestra "*Tree Pose*" .|
+
+|***Prueba 7***||
+|-|-|
+|**Identificador**|CP07|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba búsqueda con espacios en medio de los morfemas|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente la búsqueda cuando existen varios espacios en medio de los morfemas.|
+**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*Ardha &emsp;&emsp; Bhujangasana*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
+|**Resultado esperado**|**Resultado Obtenido**|
+|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|La página muestra bien la traducción en español ("*Postura de la cobra a la mitad*"), y en inglés muestra "*Half Cobra Pose*" .|
+
+|***Prueba 8***||
+|-|-|
+|**Identificador**|CP08|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba búsqueda por morfemas escritos en mayúsculas|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente la búsqueda por morfemas cuando están escritos en mayúsculas.|
+**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*ARDHA BHUJANGASANA*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
+|**Resultado esperado**|**Resultado Obtenido**|
+|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|La página muestra bien la traducción en español ("*Postura de la cobra a la mitad*"), y en inglés muestra "*Half Cobra Pose*" .|
+
+|***Prueba 9***||
+|-|-|
+|**Identificador**|CP09|
+|**Fecha**|9 de Diciembre del 2023|
+|**Nombre del caso**|Prueba búsqueda por morfemas escritos en mayúsculas y minúsculas|
+|**Objetivo**|Verificar que la función de búsqueda maneje correctamente la búsqueda por morfemas cuando están escritos en mayúsculas y minúsculas.|
+**Contexto**|El usuario debe encontrarse en la página principal del traductor ***Yoghismo*** y colocar el cursor en el campo de búsqueda|
+|**Proceso**|1. El usuario ingresa el término "*ARdHa BhUJAngAsaNA*" en la barra de búsqueda. <br/> 2. El usuario presiona el botón buscar o la tecla enter|
+|**Resultado esperado**|**Resultado Obtenido**|
+|Deberían mostrarse los resultados de la búsqueda de manera correcta, con la traducción o la información solicitada visible para el usuario.|La página muestra bien la traducción en español ("*Postura de la cobra a la mitad*"), y en inglés muestra "*Half Cobra Pose*" .|
+
 # Lista de defectos de calidad
 
 |**Nro**|**Tipo**|**Descripción**|**Corregido**|
