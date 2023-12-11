@@ -1,4 +1,4 @@
-import YogaPosture from  '../models/yogaPosture'
+import YogaPosture from '../models/yogaPosture'
 import Morpheme from '../models/morpheme'
 // Modelo (model.js)
 

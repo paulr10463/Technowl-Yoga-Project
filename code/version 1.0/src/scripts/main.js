@@ -1,5 +1,5 @@
 // Aplicación (app.js)
-import YogaPostureService from'./services/yogaPostureService.mjs';
+import YogaPostureService from './services/yogaPostureService.js';
 import YogaPosesView from './views/yogaPosturesView.js';
 import YogaPostureController from './controllers/yogaPostureController.js';
 //import YogaMorphemesView from './views/yogaMorphemesView.js';
@@ -9,7 +9,7 @@ const yogaPostureView = new YogaPosesView();
 const yogaPostureController = new YogaPostureController(yogaPostureModel, yogaPostureView);
 
 
-const drawerButton = document.getElementById('drawerButton');
+/*const drawerButton = document.getElementById('drawerButton');
 drawerButton.addEventListener('click', (event) => {
     toggleDrawer();
 });
@@ -26,7 +26,7 @@ function toggleDrawer() {
       mainContent.style.marginLeft = '350px';
     }
   }
-
+*/
 //const yogaMorphemesView = new YogaMorphemesView();
 
 //const morphemeModel = new YogaPostureService();

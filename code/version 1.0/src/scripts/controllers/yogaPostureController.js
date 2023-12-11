@@ -1,4 +1,3 @@
-// Controlador (controller.js)
 export default class YogaPostureController {
     constructor(model, view) {
         this.model = model;
