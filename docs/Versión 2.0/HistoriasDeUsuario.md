@@ -3,7 +3,7 @@
 ## TECHNOWL S.A
 
 ---
-Integrantes:
+**Integrantes:**
 
 - Chalacama Erick
 - Román Paul
@@ -11,11 +11,13 @@ Integrantes:
 - Suntasig Ariel
 - Yánez David
 
-Versión: Segunda
+**Versión:** Segunda
 
 ---
 
 # Historias De Usuario del sistema de traducción YOGHISMO
+
+---
 
 |***N°: 1***|**Título:** Visualización de nombres de posturas en tres idiomas|
 |-|-|
