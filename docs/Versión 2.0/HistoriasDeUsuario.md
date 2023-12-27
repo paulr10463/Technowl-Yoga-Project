@@ -11,7 +11,8 @@ Integrantes:
 - Suntasig Ariel
 - Yánez David
 
-Versión: Primera
+Versión: Segunda
+
 ---
 
 # Historias De Usuario del sistema de traducción YOGHISMO
@@ -51,3 +52,5 @@ Versión: Primera
 |**Historia de usuario:**|**Como** usuario del sistema, **quiero** que el software me ofrezca sugerencias de cambio cuando escriba un nombre de postura inexistente o con mala escritura en el idioma de origen, **para** poder elegir la opción correcta o más adecuada y evitar errores de traducción.|
 |**Criterio de aceptación:**|**Dado** que el usuario ingresa un nombre de postura inexistente o con mala escritura en el idioma de origen, **cuando**  el software detecta el error, **entonces** el software muestra una lista de sugerencias de cambio, ordenadas por relevancia, y permite al usuario seleccionar una de ellas o mantener su entrada original.|
 |||
+
+---
