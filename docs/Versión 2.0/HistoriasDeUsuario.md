@@ -15,7 +15,7 @@
 
 ---
 
-# Historias De Usuario del sistema de traducción YOGHISMO
+## Historias De Usuario del sistema de traducción YOGHISMO
 
 ---
 
@@ -37,19 +37,25 @@
 |**Criterio de aceptación:**|**Dado** que el usuario ingresa un nombre de postura inexistente o con mala escritura de una postura, **cuando** el software procesa el nombre, **entonces** el software muestra una notificación llamativa, en forma de un mensaje de error, con una fuente grande y un color llamativo, indicando que se debe revisar el nombre ingresado.|
 |||
 
-|***N°: 4***|**Título:** Interfaz de usuario y accesibilidad|
+|***N°: 4***|**Título:** Interfaz de usuario|
 |-|-|
-|**Historia de usuario:**|**Como** usuario del sistema, **quiero** tener una interfaz de usuario fácil de usar, que considere aspectos de accesibilidad, **para** facilitar mi interacción con el software y mejorar mi experiencia de usuario.|
-|**Criterio de aceptación:**|**Dado** que el usuario accede al software, **cuando** el software muestra la interfaz de usuario, **entonces** el software muestra una interfaz de usuario intuitiva, simple y atractiva, que cumple con los estándares de accesibilidad, incluyendo la posibilidad de utilizar el sistema con teclado y mouse.|
+|**Historia de usuario:**|**Como** usuario del sistema, **quiero** tener una interfaz de usuario fácil de usar, **para** facilitar mi interacción con el software y mejorar mi experiencia de usuario.|
+|**Criterio de aceptación:**|**Dado** que el usuario accede al software, **cuando** el software muestra la interfaz de usuario, **entonces** el software muestra una interfaz de usuario intuitiva, simple y atractiva, que sigue las mejores prácticas de diseño de interfaces.|
 |||
 
-|***N°: 5***|**Título:** Experiencia de Usuario Enriquecida con Multimedia|
+|***N°: 5***|**Título:** Accesibilidad|
+|-|-|
+|**Historia de usuario:**|**Como** usuario del sistema, **quiero** que el software considere aspectos de accesibilidad, **para** poder usar el software sin barreras ni limitaciones.|
+|**Criterio de aceptación:**|**Dado** que el usuario accede al software, **cuando** el software muestra la interfaz de usuario, **entonces** el software cumple con los estándares de accesibilidad, incluyendo la posibilidad de utilizar el sistema con teclado y mouse, el contraste adecuado de los colores, el tamaño adecuado de las fuentes, la navegación por teclas de acceso rápido, etc.|
+|||
+
+|***N°: 6***|**Título:** Experiencia de Usuario Enriquecida con Multimedia|
 |-|-|
 |**Historia de usuario:**|**Como** usuario del sistema, **quiero** disfrutar de una interfaz de usuario intuitiva y enriquecida con fotos y videos, **para** mejorar mi experiencia y comprensión de las posturas.|
 |**Criterio de aceptación:**|**Dado** que el usuario accede al software, **cuando** el software muestra la interfaz de usuario, **entonces** el software presenta una interfaz atractiva y accesible que incluye fotos y videos relacionados con la práctica de las posturas.|
 |||
 
-|***N°: 6***|**Título:** Sugerencias de cambio al ingresar nombres de posturas inexistentes o con mala escritura|
+|***N°: 7***|**Título:** Sugerencias de cambio al ingresar nombres de posturas inexistentes o con mala escritura|
 |-|-|
 |**Historia de usuario:**|**Como** usuario del sistema, **quiero** que el software me ofrezca sugerencias de cambio cuando escriba un nombre de postura inexistente o con mala escritura en el idioma de origen, **para** poder elegir la opción correcta o más adecuada y evitar errores de traducción.|
 |**Criterio de aceptación:**|**Dado** que el usuario ingresa un nombre de postura inexistente o con mala escritura en el idioma de origen, **cuando**  el software detecta el error, **entonces** el software muestra una lista de sugerencias de cambio, ordenadas por relevancia, y permite al usuario seleccionar una de ellas o mantener su entrada original.|
