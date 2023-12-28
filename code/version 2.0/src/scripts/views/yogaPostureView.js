@@ -8,12 +8,21 @@ export default class YogaPosturesView {
         this.englishTranslation = document.getElementById("EnglishTranslationResult");
         this.spanishTranslation = document.getElementById("SpanishTranslationResult");
         this.sanskritTranslation = document.getElementById("SanskritTranslationResult");
+        this.picture = document.getElementById("PosturePicture");
+        this.videoContainer = document.getElementById("PostureVideo");
     }
 
     displayPostureTranslations(yogaPosture) {
         this.englishTranslation.innerHTML = firstLetterUppercase(yogaPosture.EnglishName);
         this.spanishTranslation.innerHTML = firstLetterUppercase(yogaPosture.SpanishName);
         this.sanskritTranslation.innerHTML = firstLetterUppercase(yogaPosture.SanskritName);
+        this.picture.src = "../../assets/PosturesImages/" + yogaPosture.SanskritName + ".jpg";
+        console.log(yogaPosture.url);
+        this.videoContainer.innerHTML = 
+        `<iframe width="560" height="315" src="${yogaPosture.url}"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>`;
     }
 
     getYogaPostureName() {

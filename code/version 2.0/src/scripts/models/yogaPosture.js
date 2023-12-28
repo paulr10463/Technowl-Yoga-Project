@@ -1,11 +1,11 @@
 import {deleteMultipleSpaces} from '../utils.js'
 
 export default class YogaPosture {
-    constructor(EnglishName, SanskritName, SpanishName, classification) {
+    constructor(EnglishName, SanskritName, SpanishName, URL) {
         this.EnglishName = EnglishName;
         this.SanskritName = SanskritName;
         this.SpanishName = SpanishName;
-        this.classification = classification;
+        this.url = URL;
     }
 
     checkIfNameMatches(nameToSearch){

@@ -7,127 +7,127 @@ const yogaPosturesData = [
         "english": "Mountain Pose",
         "sanskrit": "Tadasana",
         "spanish": "Postura de la Montaña",
-        "url": "https://youtu.be/aEQVYMb9P6U?si=akBylARddYj-Xhy4"
+        "url": "https://www.youtube.com/embed/aEQVYMb9P6U?si=VqGcj8R5VvlDlSIZ"
     },
     {
         "english": "Downward-Facing Dog",
         "sanskrit": "Adho Mukha Svanasana",
         "spanish": "Perro mirando hacia abajo",
-        "url": "https://www.youtube.com/watch?v=KkT3DEpCWe4"
+        "url": "https://www.youtube.com/embed/KkT3DEpCWe4?si=RManvoVo5DHaeYaY"
     },
     {
         "english": "Warrior I",
         "sanskrit": "Virabhadrasana I",
         "spanish": "Guerrero I",
-        "url" : "https://www.youtube.com/watch?v=NgCY67xHwMI"
+        "url" : "https://www.youtube.com/embed/NgCY67xHwMI?si=8tZj3N7t6TGvRjBw"
     },
     {
         "english": "Warrior II",
         "sanskrit": "Virabhadrasana II",
         "spanish": "Guerrero II",
-        "url": "https://www.youtube.com/watch?v=-8hKpr5dxFM"
+        "url": "https://www.youtube.com/embed/-8hKpr5dxFM?si=O7kK8Hamg7QwKjof"
     },
     {
         "english": "Tree Pose",
         "sanskrit": "Vrikshasana",
         "spanish": "Postura del Árbol",
-        "url": "https://youtu.be/6g5zC1B2EDQ?si=hpF4nj3eOD6GIUCI"
+        "url": "https://www.youtube.com/embed/6g5zC1B2EDQ?si=Eoap1cZE_xDA2mft"
     },
     {
         "english": "Child's Pose",
         "sanskrit": "Balasana",
         "spanish": "Postura del Niño",
-        "url": "https://youtu.be/wzQqaCiYCqs?si=iYIOFb8DiIg4QMh0"
+        "url": "https://www.youtube.com/embed/wzQqaCiYCqs?si=HcI3QDwgPS_LnihC"
     },
     {
         "english": "Half Cobra Pose",
         "sanskrit": "Ardha Bhujangasana",
         "spanish": "Postura de la Cobra a la mitad",
-        "url": "https://youtu.be/YiaUHv5o5ls?si=otwG0ZOGjdqfRxM4"
+        "url": "https://www.youtube.com/embed/YiaUHv5o5ls?si=wmv1IfOoNLRNDsco"
     },
     {
         "english": "Seated Forward Bend",
         "sanskrit": "Paschimottanasana",
         "spanish": "Flexión hacia adelante sentado",
-        "url": "https://youtu.be/wG0eR6W1Jxg?si=gK82f9GXCxD2Rauy"
+        "url": "https://www.youtube.com/embed/wG0eR6W1Jxg?si=4tasArCYXXqsyBCW"
     },
     {
         "english": "Bridge Pose",
         "sanskrit": "Setu Bandhasana",
         "spanish": "Postura del Puente",
-        "url": "https://youtu.be/bzxt2msjEfg?si=m6WspfrbtjIFjLQX"
+        "url": "https://www.youtube.com/embed/bzxt2msjEfg?si=olRvXSq4vyIgV0bm"
     },
     {
         "english": "Corpse Pose",
         "sanskrit": "Shavasana",
         "spanish": "Postura del Cadáver",
-        "url": "https://youtu.be/R-DB4qF6Egk?si=1DT9ARhR3pRsuHtc"
+        "url": "https://www.youtube.com/embed/R-DB4qF6Egk?si=W5WoV4IMk0EPumx7"
     },
     {
         "english": "Triangle Pose",
         "sanskrit": "Trikonasana",
         "spanish": "Postura del Triángulo",
-        "url": "https://youtu.be/S6gB0QHbWFE?si=EbxOpeVbbjawhXIM"
+        "url": "https://www.youtube.com/embed/S6gB0QHbWFE?si=4otwGJeACQrUUWTq"
     },
     {
         "english": "Plank Pose",
         "sanskrit": "Kumbhakasana",
         "spanish": "Postura de la Plancha",
-        "url": "https://youtu.be/k1eqBkQQP3g?si=tvVfX-FTDOeowv1I"
+        "url": "https://www.youtube.com/embed/k1eqBkQQP3g?si=yw-ckGcBg--0IgO2"
     },
     {
         "english": "Upward-Facing Dog",
         "sanskrit": "Urdhva Mukha Svanasana",
         "spanish": "Perro mirando hacia arriba",
-        "url": "https://youtu.be/L57v0Lq9EcM?si=agoOWqp0yZqUZgd3"
+        "url": "https://www.youtube.com/embed/L57v0Lq9EcM?si=Y48YLuaAl-Ds9gJQ"
     },
     {
         "english": "Fish Pose",
         "sanskrit": "Matsyasana",
         "spanish": "Postura del Pez",
-        "url": "https://youtu.be/BAhOz-b_dEc?si=__6uzlRYb8w2uZNj"
+        "url": "https://www.youtube.com/embed/BAhOz-b_dEc?si=YYsXA590WSsB_oU1"
     },
     {
         "english": "Chair Pose",
         "sanskrit": "Utkatasana",
         "spanish": "Postura de la Silla",
-        "url": "https://youtu.be/iAclKRoyOjU?si=IU17nt-Pq-0L-qK_"
+        "url": "https://www.youtube.com/embed/iAclKRoyOjU?si=MDlBWZIaqks6TZdv"
         },
     {
         "english": "Garland Pose",
         "sanskrit": "Malasana",
         "spanish": "Postura de la Guirnalda",
-        "url": "https://youtu.be/ZhcTGjiZhDc?si=QUAQti0G7K2CYNvc"
+        "url": "https://www.youtube.com/embed/ZhcTGjiZhDc?si=cDG72GHXdmRrJnrb"
     },
     {
         "english": "Pigeon Pose",
         "sanskrit": "Eka Pada Rajakapotasana",
         "spanish": "Postura de la Paloma",
-        "url": "https://youtu.be/625gxCZFh74?si=bvxpOJrdtEjyj3-3"
+        "url": "https://www.youtube.com/embed/625gxCZFh74?si=hkyPZL5yx4QmCw6K"
     },
     {
         "english": "Upward Salute",
         "sanskrit": "Urdhva Hastasana",
         "spanish": "Saludo hacia arriba",
-        "url": "https://youtu.be/QMVJp_Fop2g?si=HYiOYK3TC99qHHUP"
+        "url": "https://www.youtube.com/embed/QMVJp_Fop2g?si=TzRxx4-L_3h3K_LK"
     },
     {
         "english": "Revolved Triangle Pose",
         "sanskrit": "Parivrtta Trikonasana",
         "spanish": "Postura del Triángulo Invertido",
-        "url": "https://youtu.be/ioUcFTiBCcY?si=KTuOv6ORSpsCoiSo"
+        "url": "https://www.youtube.com/embed/ioUcFTiBCcY?si=K9h69jkWRoWocj6d"
     },
     {
         "english": "Revolved Head To Knee Pose",
         "sanskrit": "Parivrtta Janu Sirsasana",
         "spanish": "Postura de la Cabeza a la Rodilla Invertida",
-        "url": "https://youtu.be/QCP6TEuosVs?si=ScrYcezlSwb3BCID"
+        "url": "https://www.youtube.com/embed/QCP6TEuosVs?si=nuCpjxz217Xc39OR"
     },
     {
         "english": "Pose",
         "sanskrit": "Asana",
         "spanish": "postura",
-        "url": "https://youtu.be/QCP6TEuosVs?si=ScrYcezlSwb3BCID"
+        "url": "https://www.youtube.com/embed/QCP6TEuosVs?si=dBhipl94PG09ut-t"
     },
     {
         "english": "Down",
@@ -346,7 +346,7 @@ const yogaMorphemesData = [
 ;
 export default class YogaPostureService {
     constructor() {
-        this.yogaPostures = yogaPosturesData.map(posture => new YogaPosture(posture.english, posture.sanskrit, posture.spanish));
+        this.yogaPostures = yogaPosturesData.map(posture => new YogaPosture(posture.english, posture.sanskrit, posture.spanish, posture.url));
         this.yogaMorphemes = yogaMorphemesData.map(morpheme => new Morpheme(morpheme.morpheme, morpheme.meaning))
     }
 
