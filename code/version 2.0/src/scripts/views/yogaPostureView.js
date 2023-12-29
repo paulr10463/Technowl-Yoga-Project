@@ -1,4 +1,5 @@
 import firstLetterUppercase from '../utils.js';  
+import Swal from 'sweetalert2';
 
 export default class YogaPosturesView {
     constructor() {
@@ -13,16 +14,27 @@ export default class YogaPosturesView {
     }
 
     displayPostureTranslations(yogaPosture) {
+        const mainContainer = document.getElementById("MainSection");
+        mainContainer.style.display = "flex";
         this.englishTranslation.innerHTML = firstLetterUppercase(yogaPosture.EnglishName);
         this.spanishTranslation.innerHTML = firstLetterUppercase(yogaPosture.SpanishName);
         this.sanskritTranslation.innerHTML = firstLetterUppercase(yogaPosture.SanskritName);
-        this.picture.src = "../../assets/PosturesImages/" + yogaPosture.SanskritName + ".jpg";
-        console.log(yogaPosture.url);
-        this.videoContainer.innerHTML = 
-        `<iframe width="560" height="315" src="${yogaPosture.url}"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>`;
+        const mainRightContainer = document.getElementById("MainRight");
+        const mainLeftContainer = document.getElementById("MainLeft");
+        if(yogaPosture.url == undefined) {
+            mainRightContainer.style.display = "none";
+            mainLeftContainer.style.width = "100%";
+        }else{
+            mainRightContainer.style.display = "flex";
+            mainLeftContainer.style.width = "70%";
+            this.picture.src = "../../assets/PosturesImages/" + yogaPosture.SanskritName + ".jpg";
+            this.videoContainer.innerHTML = 
+            `<iframe width="560" height="280" src="${yogaPosture.url}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>`;
+        }
+
     }
 
     getYogaPostureName() {
@@ -37,8 +49,26 @@ export default class YogaPosturesView {
         });
     }
 
+    displayPosturesSuggestions(suggestionsList){
+        const results = suggestionsList.map(element => `<strong class="postureSuggestionButton"> ${element} </strong>`);
+        Swal.fire({
+            icon: "error",
+            title: "Postura no encontrada",
+            html: `
+            Tal vez quisiste escribir: 
+            <br>
+            <b>${results}</b>
+          `,
+          showCloseButton: true,
+          });
+    }
+
     displayPostureNotFound() {
-        alert("No se encontró la postura buscada. Revisa el nombre.")
+        Swal.fire({
+            icon: "error",
+            title: "Ops! Postura no encontrada",
+            text: 'No se encontraron palabras similares',
+          });
     }
 
     displayPostureMorphemes(morphemesList) {

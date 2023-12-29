@@ -4,6 +4,7 @@
   --color-secondary: rgba(255, 186, 61 , 70%);
   --color-secondary-focused: rgba(255, 187, 61, 0.619);
   --color-tertiary: rgba(217, 217, 217 , 100%);
+  --color-cuaternary: rgb(135, 85, 175);
 }
 
 body {
@@ -150,7 +151,7 @@ body {
   border: none;
   border-radius: 20px;
   padding: 10px 10px 10px 15px;
-  margin-right: 20px;
+  margin-right: 10px;
   outline:none;
   font-family: 'Poppins';
   transition:all 0.3s ease;
@@ -196,7 +197,6 @@ body {
   background-color: white;
   border-radius: 20px;
   box-shadow: 3px 3px 8px 0.01px rgba(106, 106, 106, 0.75);
-  padding: 10px 10px 10px 10px;
   width: 90%;
   font-family: 'Poppins';
   height: 350px;
@@ -259,7 +259,7 @@ h2{
 .enlishSpanishContainer{
   display: flex;
   justify-content: space-between;
-  align-self: left;
+  align-self: center;
   width: 90%;
   font-family: 'Poppins';
 }
@@ -269,7 +269,7 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5vh;
+  margin-top: 4vh;
   align-self: center;
   background-color: var(--color-secondary);
   border-radius: 20px;
@@ -277,7 +277,7 @@ h2{
   padding: 30px 20px 30px 20px;
   width: 49%;
   font-family: 'Poppins';
-
+  height: 100%
 }
 
 .translationContainer__result{
@@ -288,7 +288,6 @@ h2{
   padding: 10px 5% 10px 5%;
   width: 90%;
   border-radius: 30px;
-  margin-top: 15px;
 }
 
 /* 
@@ -299,19 +298,19 @@ main {
   margin-top: 5vh;
   display: flex;
   width: 100%;
+  display: none;
 }
 
 .main__left{
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 /*
 main-right
 */
-.main_right{
+.main__right{
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -321,16 +320,21 @@ main-right
 
 /*Images and Videos*/
 .posturePicture__i, .postureVideo__i {
-  background-color: var(--color-primary);
+  background-color: var(--color-cuaternary);
   border-radius: 20px;
   position: relative;
-  width: 50px;
-  height: 36px;
+  width: 70px;
+  height: 45px;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.posturePicture__i {
+  margin-top: -28px;
+}
+
 
 .posturePicture__imgContainer, .postureVideo__videoContainer{
   position: relative;
@@ -338,16 +342,24 @@ main-right
   top: -20px;
   z-index: 1;
   border-radius: 20px;
-  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  height: fit-content;
+  width: 100%;
+}
+.postureVideo__videoContainer{
+  padding: 20px;
+}
+.posturePicture__img, .postureVideo__video{
+  height: 230px;
+  border-radius: 20px;
 }
 
-.posturePicture__img, .postureVideo__video{
-  height: 250px;
-  border-radius: 20px;
+.postureSuggestionButton{
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-family: 'Poppins';
 }
 
 

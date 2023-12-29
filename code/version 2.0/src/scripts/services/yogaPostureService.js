@@ -1,5 +1,6 @@
 import YogaPosture from '../models/yogaPosture'
 import Morpheme from '../models/morpheme'
+import {calculateLevenshteinDistance} from '../utils.js'
 // Modelo (model.js)
 
 const yogaPosturesData = [
@@ -126,8 +127,7 @@ const yogaPosturesData = [
     {
         "english": "Pose",
         "sanskrit": "Asana",
-        "spanish": "postura",
-        "url": "https://www.youtube.com/embed/QCP6TEuosVs?si=dBhipl94PG09ut-t"
+        "spanish": "postura"
     },
     {
         "english": "Down",
@@ -348,6 +348,23 @@ export default class YogaPostureService {
     constructor() {
         this.yogaPostures = yogaPosturesData.map(posture => new YogaPosture(posture.english, posture.sanskrit, posture.spanish, posture.url));
         this.yogaMorphemes = yogaMorphemesData.map(morpheme => new Morpheme(morpheme.morpheme, morpheme.meaning))
+        this.dictionary = []
+        yogaPosturesData.map(posture => {
+            this.dictionary.push(posture.english);
+            this.dictionary.push(posture.sanskrit);
+            this.dictionary.push(posture.spanish)});
+    }
+
+    getPosturesBySimilarNames(inputWord, umbral) {
+      const similarWords = this.dictionary.filter((word) => {
+        const distance = calculateLevenshteinDistance(
+          inputWord.toLowerCase(),
+          word.toLowerCase()
+        );
+        return distance <= umbral;
+      });
+    
+      return similarWords;
     }
 
     getPostureByName(postureNameToSearch) {

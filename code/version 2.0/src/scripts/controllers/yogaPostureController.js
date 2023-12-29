@@ -14,7 +14,13 @@ export default class YogaPostureController {
                 this.view.displayPostureMorphemes(morphemesList);
             }
         }else{
-            this.view.displayPostureNotFound(); 
+            const result = this.model.getPosturesBySimilarNames(postureNameToSearch, 2);
+            console.log(result);
+            if(result.length > 0){  
+                this.view.displayPosturesSuggestions(result);
+            }else{
+                this.view.displayPostureNotFound();
+            }
         }
     }
 }
