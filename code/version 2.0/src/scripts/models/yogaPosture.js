@@ -2,27 +2,44 @@ import {deleteMultipleSpaces} from '../utils.js'
 
 export default class YogaPosture {
     constructor(EnglishName, SanskritName, SpanishName, URL) {
-        this.EnglishName = EnglishName;
-        this.SanskritName = SanskritName;
-        this.SpanishName = SpanishName;
-        this.url = URL;
+        this._EnglishName = EnglishName;
+        this._SanskritName = SanskritName;
+        this._SpanishName = SpanishName;
+        this._url = URL;
     }
 
     checkIfNameMatches(nameToSearch){
-        return this.EnglishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
-        || this.SpanishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
-        || this.SanskritName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase();
+        return this._EnglishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
+        || this._SpanishName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase()
+        || this._SanskritName.toLowerCase() == deleteMultipleSpaces(nameToSearch.trim()).toLowerCase();
     }
 
     getMorphemesByPosture(morphemesList){
         const morphemesFound = []
         for (const morpheme of morphemesList){
-            if(this.SanskritName.toLowerCase().includes(morpheme.morpheme.toLowerCase())){
+            if(this._SanskritName.toLowerCase().includes(morpheme.getMorpheme().toLowerCase())){
                 morphemesFound.push(morpheme)
             }
         }
         return morphemesFound.reverse()
     }
+
+    getEnglishName(){
+        return this._EnglishName
+    }
+
+    getSanskritName(){
+        return this._SanskritName
+    }
+
+    getSpanishName(){
+        return this._SpanishName
+    }
+
+    getURL(){
+        return this._url
+    }
+
 }
 
 

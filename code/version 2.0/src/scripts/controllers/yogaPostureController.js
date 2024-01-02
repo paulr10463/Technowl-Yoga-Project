@@ -1,25 +1,25 @@
 export default class YogaPostureController {
     constructor(model, view) {
-        this.model = model;
-        this.view = view;
-        this.view.addYogaPostureHandler(this.searchYogaPosturesTranslations.bind(this));
+        this._model = model;
+        this._view = view;
+        this._view.addYogaPostureHandler(this.searchYogaPosturesTranslations.bind(this));
     }
 
     searchYogaPosturesTranslations(postureNameToSearch){
-        const postureFound = this.model.getPostureByName(postureNameToSearch)
+        const postureFound = this._model.getPostureByName(postureNameToSearch)
         if(postureFound){
-            this.view.displayPostureTranslations(postureFound);
-            const morphemesList = postureFound.getMorphemesByPosture(this.model.getMorphemes())
+            this._view.displayPostureTranslations(postureFound);
+            const morphemesList = postureFound.getMorphemesByPosture(this._model.getMorphemes())
             if (morphemesList){
-                this.view.displayPostureMorphemes(morphemesList);
+                this._view.displayPostureMorphemes(morphemesList);
             }
         }else{
-            const result = this.model.getPosturesBySimilarNames(postureNameToSearch, 2);
+            const result = this._model.getPosturesBySimilarNames(postureNameToSearch, 2);
             console.log(result);
             if(result.length > 0){  
-                this.view.displayPosturesSuggestions(result);
+                this._view.displayPosturesSuggestions(result);
             }else{
-                this.view.displayPostureNotFound();
+                this._view.displayPostureNotFound();
             }
         }
     }

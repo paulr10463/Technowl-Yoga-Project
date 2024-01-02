@@ -1,362 +1,22 @@
 import YogaPosture from '../models/yogaPosture'
 import Morpheme from '../models/morpheme'
 import {calculateLevenshteinDistance} from '../utils.js'
-// Modelo (model.js)
+import * as yogaPosturesData from '../../data/yogaPostures.json'
+import * as yogaMorphemesData from '../../data/yogaMorphemes.json'
 
-const yogaPosturesData = [
-    {
-        "english": "Mountain Pose",
-        "sanskrit": "Tadasana",
-        "spanish": "Postura de la Montaña",
-        "url": "https://www.youtube.com/embed/aEQVYMb9P6U?si=VqGcj8R5VvlDlSIZ"
-    },
-    {
-        "english": "Downward-Facing Dog",
-        "sanskrit": "Adho Mukha Svanasana",
-        "spanish": "Perro mirando hacia abajo",
-        "url": "https://www.youtube.com/embed/KkT3DEpCWe4?si=RManvoVo5DHaeYaY"
-    },
-    {
-        "english": "Warrior I",
-        "sanskrit": "Virabhadrasana I",
-        "spanish": "Guerrero I",
-        "url" : "https://www.youtube.com/embed/NgCY67xHwMI?si=8tZj3N7t6TGvRjBw"
-    },
-    {
-        "english": "Warrior II",
-        "sanskrit": "Virabhadrasana II",
-        "spanish": "Guerrero II",
-        "url": "https://www.youtube.com/embed/-8hKpr5dxFM?si=O7kK8Hamg7QwKjof"
-    },
-    {
-        "english": "Tree Pose",
-        "sanskrit": "Vrikshasana",
-        "spanish": "Postura del Árbol",
-        "url": "https://www.youtube.com/embed/6g5zC1B2EDQ?si=Eoap1cZE_xDA2mft"
-    },
-    {
-        "english": "Child's Pose",
-        "sanskrit": "Balasana",
-        "spanish": "Postura del Niño",
-        "url": "https://www.youtube.com/embed/wzQqaCiYCqs?si=HcI3QDwgPS_LnihC"
-    },
-    {
-        "english": "Half Cobra Pose",
-        "sanskrit": "Ardha Bhujangasana",
-        "spanish": "Postura de la Cobra a la mitad",
-        "url": "https://www.youtube.com/embed/YiaUHv5o5ls?si=wmv1IfOoNLRNDsco"
-    },
-    {
-        "english": "Seated Forward Bend",
-        "sanskrit": "Paschimottanasana",
-        "spanish": "Flexión hacia adelante sentado",
-        "url": "https://www.youtube.com/embed/wG0eR6W1Jxg?si=4tasArCYXXqsyBCW"
-    },
-    {
-        "english": "Bridge Pose",
-        "sanskrit": "Setu Bandhasana",
-        "spanish": "Postura del Puente",
-        "url": "https://www.youtube.com/embed/bzxt2msjEfg?si=olRvXSq4vyIgV0bm"
-    },
-    {
-        "english": "Corpse Pose",
-        "sanskrit": "Shavasana",
-        "spanish": "Postura del Cadáver",
-        "url": "https://www.youtube.com/embed/R-DB4qF6Egk?si=W5WoV4IMk0EPumx7"
-    },
-    {
-        "english": "Triangle Pose",
-        "sanskrit": "Trikonasana",
-        "spanish": "Postura del Triángulo",
-        "url": "https://www.youtube.com/embed/S6gB0QHbWFE?si=4otwGJeACQrUUWTq"
-    },
-    {
-        "english": "Plank Pose",
-        "sanskrit": "Kumbhakasana",
-        "spanish": "Postura de la Plancha",
-        "url": "https://www.youtube.com/embed/k1eqBkQQP3g?si=yw-ckGcBg--0IgO2"
-    },
-    {
-        "english": "Upward-Facing Dog",
-        "sanskrit": "Urdhva Mukha Svanasana",
-        "spanish": "Perro mirando hacia arriba",
-        "url": "https://www.youtube.com/embed/L57v0Lq9EcM?si=Y48YLuaAl-Ds9gJQ"
-    },
-    {
-        "english": "Fish Pose",
-        "sanskrit": "Matsyasana",
-        "spanish": "Postura del Pez",
-        "url": "https://www.youtube.com/embed/BAhOz-b_dEc?si=YYsXA590WSsB_oU1"
-    },
-    {
-        "english": "Chair Pose",
-        "sanskrit": "Utkatasana",
-        "spanish": "Postura de la Silla",
-        "url": "https://www.youtube.com/embed/iAclKRoyOjU?si=MDlBWZIaqks6TZdv"
-        },
-    {
-        "english": "Garland Pose",
-        "sanskrit": "Malasana",
-        "spanish": "Postura de la Guirnalda",
-        "url": "https://www.youtube.com/embed/ZhcTGjiZhDc?si=cDG72GHXdmRrJnrb"
-    },
-    {
-        "english": "Pigeon Pose",
-        "sanskrit": "Eka Pada Rajakapotasana",
-        "spanish": "Postura de la Paloma",
-        "url": "https://www.youtube.com/embed/625gxCZFh74?si=hkyPZL5yx4QmCw6K"
-    },
-    {
-        "english": "Upward Salute",
-        "sanskrit": "Urdhva Hastasana",
-        "spanish": "Saludo hacia arriba",
-        "url": "https://www.youtube.com/embed/QMVJp_Fop2g?si=TzRxx4-L_3h3K_LK"
-    },
-    {
-        "english": "Revolved Triangle Pose",
-        "sanskrit": "Parivrtta Trikonasana",
-        "spanish": "Postura del Triángulo Invertido",
-        "url": "https://www.youtube.com/embed/ioUcFTiBCcY?si=K9h69jkWRoWocj6d"
-    },
-    {
-        "english": "Revolved Head To Knee Pose",
-        "sanskrit": "Parivrtta Janu Sirsasana",
-        "spanish": "Postura de la Cabeza a la Rodilla Invertida",
-        "url": "https://www.youtube.com/embed/QCP6TEuosVs?si=nuCpjxz217Xc39OR"
-    },
-    {
-        "english": "Pose",
-        "sanskrit": "Asana",
-        "spanish": "postura"
-    },
-    {
-        "english": "Down",
-        "sanskrit": "Adho",
-        "spanish": "abajo"
-    },
-    {
-        "english": "Half",
-        "sanskrit": "Ardha",
-        "spanish": "mitad"
-    },
-    {
-        "english": "Upward",
-        "sanskrit": "Urdhva",
-        "spanish": "arriba"
-    },
-    {
-        "english": "Face",
-        "sanskrit": "Mukha",
-        "spanish": "rostro"
-    },
-    {
-        "english": "Dog",
-        "sanskrit": "Svana",
-        "spanish": "perro"
-    },
-    {
-        "english": "Warrior",
-        "sanskrit": "Virabhadra",
-        "spanish": "guerrero"
-    },
-    {
-        "english": "Tree",
-        "sanskrit": "Vriksha",
-        "spanish": "árbol"
-    },
-    {
-        "english": "Child",
-        "sanskrit": "Bala",
-        "spanish": "niño"
-    },
-    {
-        "english": "Cobra",
-        "sanskrit": "Bhujanga",
-        "spanish": "cobra"
-    },
-    {
-        "english": "West",
-        "sanskrit": "Paschi",
-        "spanish": "oeste"
-    },
-    {
-        "english": "Bridge",
-        "sanskrit": "Setu",
-        "spanish": "puente"
-    },
-    {
-        "english": "Corpse",
-        "sanskrit": "Shava",
-        "spanish": "cadáver"
-    },
-    {
-        "english": "Triangle",
-        "sanskrit": "Trikona",
-        "spanish": "triángulo"
-    },
-    {
-        "english": "Fish",
-        "sanskrit": "Matsya",
-        "spanish": "pez"
-    },
-    {
-        "english": "Garland",
-        "sanskrit": "Mala",
-        "spanish": "guirnalda"
-    },
-    {
-        "english": "One",
-        "sanskrit": "Eka",
-        "spanish": "uno"
-    },
-    {
-        "english": "Foot",
-        "sanskrit": "Pada",
-        "spanish": "pie"
-    },
-    {
-        "english": "Royal",
-        "sanskrit": "Raja",
-        "spanish": "real"
-    },
-    {
-        "english": "Pigeon",
-        "sanskrit": "Kapota",
-        "spanish": "paloma"
-    },
-    {
-        "english": "Hand",
-        "sanskrit": "Hasta",
-        "spanish": "mano"
-    },
-    {
-        "english": "Inverted",
-        "sanskrit": "Parivrtta",
-        "spanish": "invertido"
-    },
-    {
-        "english": "Knee",
-        "sanskrit": "Janu",
-        "spanish": "rodilla"
-    },
-    {
-        "english": "Head",
-        "sanskrit": "Sirsa",
-        "spanish": "cabeza"
-    }
-]
-const yogaMorphemesData = [
-    {
-        "morpheme": "Asana",
-        "meaning": "postura"
-    },
-    {
-        "morpheme": "Adho",
-        "meaning": "abajo"
-    },
-    {
-        "morpheme": "Ardha",
-        "meaning": "mitad"
-    },
-    {
-        "morpheme": "Urdhva",
-        "meaning": "arriba"
-    },
-    {
-        "morpheme": "Mukha",
-        "meaning": "rostro"
-    },
-    {
-        "morpheme": "Svana",
-        "meaning": "perro"
-    },
-    {
-        "morpheme": "Virabhadra",
-        "meaning": "guerrero"
-    },
-    {
-        "morpheme": "Vriksha",
-        "meaning": "árbol"
-    },
-    {
-        "morpheme": "Bala",
-        "meaning": "niño"
-    },
-    {
-        "morpheme": "Bhujanga",
-        "meaning": "cobra"
-    },
-    {
-        "morpheme": "Paschi",
-        "meaning": "oeste"
-    },
-    {
-        "morpheme": "Setu",
-        "meaning": "puente"
-    },
-    {
-        "morpheme": "Shava",
-        "meaning": "cadáver"
-    },
-    {
-        "morpheme": "Trikona",
-        "meaning": "triángulo"
-    },
-    {
-        "morpheme": "Matsya",
-        "meaning": "pez"
-    },
-    {
-        "morpheme": "Mala",
-        "meaning": "guirnalda"
-    },
-    {
-        "morpheme": "Eka",
-        "meaning": "uno"
-    },
-    {
-        "morpheme": "Pada",
-        "meaning": "pie"
-    },
-    {
-        "morpheme": "Raja",
-        "meaning": "real"
-    },
-    {
-        "morpheme": "Kapota",
-        "meaning": "paloma"
-    },
-    {
-        "morpheme": "Hasta",
-        "meaning": "mano"
-    },
-    {
-        "morpheme": "Parivrtta",
-        "meaning": "invertido"
-    },
-    {
-        "morpheme": "Janu",
-        "meaning": "rodilla"
-    },
-    {
-        "morpheme": "Sirsa",
-        "meaning": "cabeza"
-    }
-]
-;
 export default class YogaPostureService {
     constructor() {
-        this.yogaPostures = yogaPosturesData.map(posture => new YogaPosture(posture.english, posture.sanskrit, posture.spanish, posture.url));
-        this.yogaMorphemes = yogaMorphemesData.map(morpheme => new Morpheme(morpheme.morpheme, morpheme.meaning))
-        this.dictionary = []
-        yogaPosturesData.map(posture => {
-            this.dictionary.push(posture.english);
-            this.dictionary.push(posture.sanskrit);
-            this.dictionary.push(posture.spanish)});
+        this._yogaPostures = yogaPosturesData.default.map(posture => new YogaPosture(posture.english, posture.sanskrit, posture.spanish, posture.url));
+        this._yogaMorphemes = yogaMorphemesData.default.map(morpheme => new Morpheme(morpheme.morpheme, morpheme.meaning))
+        this._dictionary = []
+        yogaPosturesData.default.map(posture => {
+            this._dictionary.push(posture.english);
+            this._dictionary.push(posture.sanskrit);
+            this._dictionary.push(posture.spanish)});
     }
 
     getPosturesBySimilarNames(inputWord, umbral) {
-      const similarWords = this.dictionary.filter((word) => {
+      const similarWords = this._dictionary.filter((word) => {
         const distance = calculateLevenshteinDistance(
           inputWord.toLowerCase(),
           word.toLowerCase()
@@ -368,7 +28,7 @@ export default class YogaPostureService {
     }
 
     getPostureByName(postureNameToSearch) {
-        for (const posture of this.yogaPostures){
+        for (const posture of this._yogaPostures){
             if (posture.checkIfNameMatches(postureNameToSearch)){
                 return posture
             }
@@ -377,14 +37,14 @@ export default class YogaPostureService {
     }
     
     addPosture(yogaPosture) {
-        this.yogaPostures.push(yogaPosture);
+        this._yogaPostures.push(yogaPosture);
     }
 
     getPostures() {
-        return this.yogaPostures;
+        return this._yogaPostures;
     }
 
     getMorphemes() {
-        return this.yogaMorphemes;
+        return this._yogaMorphemes;
     }
 }

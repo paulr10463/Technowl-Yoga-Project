@@ -1,6 +1,12 @@
 export default class Morpheme {
     constructor(morpheme, meaning) {
-        this.morpheme = morpheme;
-        this.meaning = meaning;
+        this._morpheme = morpheme;
+        this._meaning = meaning;
+    }
+    getMorpheme(){
+        return this._morpheme
+    }
+    getMeaning(){
+        return this._meaning
     }
 }
