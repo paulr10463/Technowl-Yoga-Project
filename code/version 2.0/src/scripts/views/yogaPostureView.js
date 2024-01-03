@@ -27,7 +27,7 @@ export default class YogaPosturesView {
         }else{
             mainRightContainer.style.display = "flex";
             mainLeftContainer.style.width = "70%";
-            this._picture.src = "../../assets/PosturesImages/" + yogaPosture.getSanskritName() + ".jpg";
+            this._picture.src = "images/PosturesImages/" + yogaPosture.getSanskritName() + ".jpg";
             this._videoContainer.innerHTML = 
             `<iframe width="560" height="280" src="${yogaPosture.getURL()}"
             title="YouTube video player" frameborder="0"

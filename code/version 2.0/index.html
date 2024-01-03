@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yoghismo App</title>
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
@@ -14,9 +14,10 @@
 </head>
 
 <body>
-    <script type="module" src="scripts/main.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
+    
     <!--
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
         <div class="drawer">
             <div class="drawer__image__container">
                 <img class="drawer__image" src="assets/logoAIYY.png" alt="">
@@ -33,7 +34,7 @@
             <img class="header_button_img" src="assets/hamburger_logo.png" alt="menu">
         </button>
         -->
-            <img class="header__logo" src="assets/logoAIYY.png" alt="Logo Asociación Internacional de Yoga Yoguismo">
+            <img class="header__logo" src="images/logoAIYY.png" alt="Logo Asociación Internacional de Yoga Yoguismo">
         </div>
 
         <div class="inputContainer">
@@ -41,7 +42,7 @@
                 <input class="postureForm__field" type="text" id="postureNameInput"
                     placeholder="Ingresa el nombre de la postura o morfema: " required>
                 <button id="submitButton" class="postureForm__button" type="submit"><img
-                        class="postureForm__button__image" src="assets/search.png" alt="Botón de búsqueda"></button>
+                        class="postureForm__button__image" src="images/search.png" alt="Botón de búsqueda"></button>
             </form>
         </div>
 
