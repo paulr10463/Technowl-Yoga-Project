@@ -11,7 +11,7 @@
 - Suntasig Ariel
 - Yánez David
 
-**Versión:** Segunda
+**Versión:** 2.0
 
 ---
 
