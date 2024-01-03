@@ -194,7 +194,7 @@ Versión: 2.0
 |El tiempo estándar para una función no debe superar los 100ms|La función tiene un tiempo de respuesta de 14ms.|
 
 # Resultados de las pruebas unitarias
-![Alt text](image.png)
+![Alt text](assets/TestsPassed.png)
 
 # Lista de defectos de calidad
 
@@ -202,5 +202,5 @@ Versión: 2.0
 |-|-|-|-|
 |**1**|Funcional - Chequeo|Al querer traducir el morfema "*Adho*" en el resultado en inglés se presenta "*Downward Facing Dog*", siendo que debería presentarse únicamente "*Down*".|**Sí**|
 |**2**|No Funcional - Mantenibilidad|Se tiene una mala convención respecto al nombre de "*yogaPosturesView.js*", ya que se manejan nombres en singular por lo que debería ser solo "*yogaPostureView.js*" .|**Sí**|
-|**3**|Funcional - Mantenibilidad|Se tiene un mal encapsulamiento dentro de "*yogaPostureService.js*" respecto a "yogaPostures" y "yogaMorphemes" que deberían ser privadas.|**No**|
+|**3**|Funcional - Mantenibilidad|Se tiene un mal encapsulamiento dentro de "*yogaPostureService.js*" respecto a "yogaPostures" y "yogaMorphemes" que deberían ser privadas.|**Sí**|
 |**4**|Funcional - Chequeo|Al buscar "*Urdhva Mukha Svanasana*" hace falta la imagen de la postura en el despliegue.|**Sí**|

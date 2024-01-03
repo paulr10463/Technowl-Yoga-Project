@@ -49,3 +49,7 @@ En la Figura 3 se puede observar una representación visual del diseño del proy
 Además, se adjunta el enlace donde se desarrollo el diseño del sistema de traducción:
 
 [ Mockup del sistema](https://www.figma.com/file/FCIhMwdpiagLvhLiKOsORq/Calidad-de-Software?type=design&node-id=0%3A1&mode=design&t=nZxJuCBgCuSAjgHC-1)
+
+Finalmente, se tomó en consideración las mejoras indicadas, realizando el despliegue de la aplicación en el servicio web Vercel. A continuación, se presenta el link para acceder al servicio:
+
+[ Yoghismo ](https://technowl-yoga-project.vercel.app/)
