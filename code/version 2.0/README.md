@@ -9,8 +9,12 @@ Integrantes:
 - Suntasig Ariel
 - Yánez David
 
-Versión: 1.0
+Versión: 2.0
 ---
+### La aplicación web "Yoghismo" se encuentra desplegada en: [Yoghismo-Vercel](https://technowl-yoga-project.vercel.app/) 
+
+### Ejecución del sistema en entorno local
+
 El sistema de traducción de posturas cuenta con dos carpetas principales: 
  - docs
  - code 
@@ -19,7 +23,7 @@ El sistema de traducción de posturas cuenta con dos carpetas principales:
 
  `git clone https://github.com/paulr10463/Technowl-Yoga-Project.git`
 
- Luego, se deberá posicionar en la carpeta src dentro de code, aquí se ejecutará el comando:
+ Luego, se deberá posicionar en la carpeta version x.0 dentro de code, según se requiera aquí se ejecutará el comando:
 
  `npm install`
 
@@ -28,3 +32,7 @@ El sistema de traducción de posturas cuenta con dos carpetas principales:
  `npm run dev`
 
  Este comando nos indicará el puerto en el que se ejecutará nuestra aplicación, por defecto, será el puerto `5173`. Así, simplemente se deberá entrar a este [link](http://localhost:5173/).
+
+ Para la ejecución de los test, se deberá ubicar en la carpeta version x.0 y ejecutar el comando 
+
+  `npm test`

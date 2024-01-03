@@ -103,6 +103,7 @@ body {
   height: 120px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .header__logo{
@@ -134,7 +135,7 @@ body {
 
 .inputContainer {
   align-self: center;
-  width: 50%;
+  width: 100%;
 }
 .inputContainer .postureFormContainer{
   display: flex;
@@ -145,7 +146,8 @@ body {
 }
 
 .inputContainer .postureForm__field{
-  width: 60%;
+  width: 600px;
+  min-width: 300px;
   background-color: var(--color-primary);
   color: #ffffff;
   border: none;
@@ -299,10 +301,11 @@ main {
   display: flex;
   width: 100%;
   display: none;
+  flex-wrap: nowrap;
 }
 
 .main__left{
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -362,4 +365,43 @@ main-right
   font-family: 'Poppins';
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 5px;
+  }
+  main {
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+  .main__left, .main__right{
+    width: 100% !important;
+    display: flex;
+  }
+  .inputContainer .postureForm__field,
+  .morphemesTable th, 
+  .morphemesTable td, 
+  .description__text,
+  .translationContainer__result{
+    font-size: 0.9em;
+  }
+
+  .inputContainer .postureForm__field{
+    margin: 0px 5px 0px 5px;
+  }
+  .main__left{
+    margin-bottom: 10vh;
+  }
+  .video__player{
+    width: 100%;
+    margin: 0px;
+  }
+  .postureVideo{
+    width: 90%;
+    margin: 0px;
+  }
+}
 
