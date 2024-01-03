@@ -279,7 +279,7 @@ h2{
   padding: 30px 20px 30px 20px;
   width: 49%;
   font-family: 'Poppins';
-  height: 100%
+
 }
 
 .translationContainer__result{
@@ -319,6 +319,8 @@ main-right
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 5px solid blue ;
+  padding: 0px;
 }
 
 /*Images and Videos*/
@@ -338,7 +340,6 @@ main-right
   margin-top: -28px;
 }
 
-
 .posturePicture__imgContainer, .postureVideo__videoContainer{
   position: relative;
   border: 2px solid var(--color-primary);
@@ -352,12 +353,20 @@ main-right
 }
 .postureVideo__videoContainer{
   padding: 20px;
+  height: 300px;
 }
-.posturePicture__img, .postureVideo__video{
+.posturePicture__img{
   height: 230px;
   border-radius: 20px;
 }
-
+.postureVideo{
+  width: 100%;
+}
+.video__player{
+  width: 100%;
+  margin: 0px;
+  height: 100%;
+}
 .postureSuggestionButton{
   background: none;
   border: none;

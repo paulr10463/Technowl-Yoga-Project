@@ -29,7 +29,7 @@ export default class YogaPosturesView {
             mainLeftContainer.style.width = "70%";
             this._picture.src = "images/PosturesImages/" + yogaPosture.getSanskritName() + ".jpg";
             this._videoContainer.innerHTML = 
-            `<iframe class="video__player" width="560" height="280" src="${yogaPosture.getURL()}"
+            `<iframe class="video__player" src="${yogaPosture.getURL()}"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>`;
