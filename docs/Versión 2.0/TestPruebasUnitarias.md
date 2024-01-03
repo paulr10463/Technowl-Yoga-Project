@@ -19,7 +19,7 @@
 
 ---
 <p align="center">
-  <img src="assets/image.png" alt="Test pruebas unitarias">
+  <img src="assets/TestsPassed.png" alt="Test pruebas unitarias">
 </p>
 
 <p align="center">
