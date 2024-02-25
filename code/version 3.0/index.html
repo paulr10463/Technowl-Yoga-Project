@@ -15,25 +15,89 @@
 
 <body>
     <script type="module" src="src/scripts/main.js"></script>
-    
-    <!--
-        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <div class="drawer">
-            <div class="drawer__image__container">
-                <img class="drawer__image" src="assets/logoAIYY.png" alt="">
-            </div>
-            <a href="#" class="nav-link drawer__item "><i class="fa-solid fa-house fa-2x"></i> <span>Principal</span> </a>
-            <a href="#" class="nav-link drawer__item"><i class="fa-solid fa-history fa-2x"></i><span>Historial</span></a>
-            <a href="#" class="nav-link drawer__item"><i class="fa-solid fa-question-circle fa-2x"></i><span>Ayuda</span></a>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <!--DRAWER-->
+    <div class="drawer">
+        <button class="closeDrawerButton" id="closeDrawerButton"><a href=""></a><i
+                class="fa-solid fa-xmark fa-xl"></i></button>
+        <img class="drawer__image" src="images/logoAIYY.png" alt="Logo de Asociación Internacional de Yoga Yoguismo">
+        <div class="drawer__buttonContainer">
+            <button class="drawer__item" id="showPoseOverlay">Añadir Posturas <i class="fa-solid fa-chevron-right"></i></button>
+            <button class="drawer__item" id="showMorphemOverlay">Añadir Morfemas <i
+                    class="fa-solid fa-chevron-right"></i></button>
         </div>
-    -->
+
+        Technowl ®
+    </div>
+
+    <!--OVERLAY NEW MORPHEM-->
+    <div id="MorphemOverlay" class="overlay">
+        <div class="overlay-content">
+            <button id="closeMorphemOverlay" class="close-overlay-button"><i class="fa-solid fa-xmark"></i></button>
+            <div class="overlay-header">
+                <h2>Nuevo Morfema</h2>
+                <p>Ingresa los datos del nuevo morfema a registrar</p>
+            </div>
+           
+            <form id="morfemaForm" class="overlay_form">
+                <label for="morphemInputSanscrito">Sánscrito</label>
+                <input type="text" id="morphemInputSanscrito" name="sanscrito" placeholder="Vriksha, asana">
+
+                <label for="morphemInputIngles">Inglés</label>
+                <input type="text" id="morphemInputIngles" name="ingles" placeholder="Tree, Pose">
+
+                <label for="MorphemInputEspanol">Español</label>
+                <input type="text" id="MorphemInputEspanol" name="espanol" placeholder="Árbol, pose">
+
+                <button type="submit" class="submit-button" id="submitMorphemButton">Aceptar</button>
+            </form>
+        </div>
+    </div>
+
+    <!--OVERLAY NEW POSE-->
+    <div id="PoseOverlay" class="overlay">
+        <div class="overlay-content">
+            <button id="closePoseOverlay" class="close-overlay-button"><i class="fa-solid fa-xmark"></i></button>
+            <div class="overlay-header">
+                <h2>Nueva Postura</h2>
+                <p>Ingresa los datos de la nueva postura a registrar</p>
+            </div>
+           
+            <form id="poseForm" class="overlay_form">
+                <label for="poseInputSanscrito">Sánscrito</label>
+                <input type="text" id="poseInputSanscrito" name="sanscrito" placeholder="Vriksha, asana">
+
+                <label for="ingles">Inglés</label>
+                <input type="text" id="poseInputIngles" name="ingles" placeholder="Tree, Pose">
+
+                <label for="espanol">Español</label>
+                <input type="text" id="poseInputEspanol" name="espanol" placeholder="Árbol, pose">
+
+                <label for="imagen">Imagen</label>
+                <p>Carga una imagen que muestre cómo hacer la postura</p>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="poseInputImagen" name="imagen" />
+                </div>
+                
+
+                <label for="video">Video</label>
+                <p>Carga el link embebido del video que muestre cómo hacer la postura </p>
+                <input type="text" id="poseInputVideo" name="video" placeholder="https://www.youtube.com/embed/FEH3YU02bDo?si=WFB_qnCQiVhA3ATb">
+
+                <button type="submit" class="submit-button" id="submitPoseButton">Aceptar</button>
+            </form>
+        </div>
+    </div>
+
     <div class="main-content">
         <div class="header">
-            <!--
-        <button id="drawerButton" class="header__button">
-            <img class="header_button_img" src="assets/hamburger_logo.png" alt="menu">
-        </button>
-        -->
+
+            <button id="drawerButton" class="header__button">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </button>
+
             <img class="header__logo" src="images/logoAIYY.png" alt="Logo Asociación Internacional de Yoga Yoguismo">
         </div>
 
@@ -88,7 +152,7 @@
                         <i class="fa-solid fa-image fa-xl" style="color: #ffffff;"></i>
                     </div>
                     <div class="posturePicture__imgContainer">
-                        <img id="PosturePicture"  class="posturePicture__img"  alt="Imagen de la postura">
+                        <img id="PosturePicture" class="posturePicture__img" alt="Imagen de la postura">
                     </div>
                 </div>
                 <div class="postureVideo">

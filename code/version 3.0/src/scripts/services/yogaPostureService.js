@@ -36,8 +36,10 @@ export default class YogaPostureService {
         return null
     }
     
-    addPosture(yogaPosture) {
-        this._yogaPostures.push(yogaPosture);
+    addMorpheme(yogaMorpheme) {
+        const newMorphemeToAdd = Morpheme(yogaMorpheme.morpheme, yogaMorpheme.spanish);
+        const newPostureToAdd = YogaPosture(yogaMorpheme.english, yogaMorpheme.sanskrit, yogaMorpheme.spanish, null);
+        
     }
 
     getPostures() {
@@ -45,6 +47,9 @@ export default class YogaPostureService {
     }
 
     getMorphemes() {
+        const morphemesListStr = localStorage.getItem('MorphemesList');
+        const listaMorfemas = listaStr ? JSON.parse(morphemesListStr) : [];
+        //return listaMorfemas;
         return this._yogaMorphemes;
     }
 }

@@ -1,10 +1,16 @@
 :root {
-  --color-primary: rgba(72, 9, 122 , 69%);
+  --color-primary: rgb(135, 85, 175);
   --color-primary-focused: rgba(71, 9, 122, 0.601);
   --color-secondary: rgba(255, 186, 61 , 70%);
   --color-secondary-focused: rgba(255, 187, 61, 0.619);
   --color-tertiary: rgba(217, 217, 217 , 100%);
   --color-cuaternary: rgb(135, 85, 175);
+  --color-placeholder: #b2b0b0;
+  --drawer-width: 350px;
+  --drawer-width-mobile: 250px;
+  --border-radius: 20px;
+  --font-size-h1: clamp(1rem, 1.2rem + 1.5vw, 1.5rem)
+  --font-size-h2: clamp(0.8rem, 1rem + 1.2vw, 1rem)
 }
 
 body {
@@ -13,7 +19,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 .main-content{
   height: 100vh;
@@ -23,86 +28,232 @@ body {
 
 /*Drawer*/
 .drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
   position: fixed;
   top: 0px; /* Height of the fixed navbar */
-  left: -350px; /* Set initially to hide the drawer */
-  width: 350px;
-  background-color: #333;
+  left: -350px; /* Width of the drawer */
+  width: var(--drawer-width);
+  background-color: var(--color-primary);
   color: #fff;
   transition: left 0.3s ease-in-out;
-  background-image: url('../assets/drawer_bg.png'); /* Ruta de tu imagen */
   background-size: cover; /* Para cubrir completamente el fondo del div */
   background-position: center; /* Centrar la imagen en el div */
+  align-items: center;
+  padding: 4rem 2rem;
+  z-index: 1;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.drawer__image__container{
+@media screen and (max-width: 767px) {
+  .drawer {
+    width: var(--drawer-width-mobile);
+
+    button{
+      font-size: 1rem;
+    }
+  }
+  
+  .overlay-content{
+    padding: 1.5rem !important;
+    
+    div, label, p, input, button{
+      font-size: 0.8rem !important;
+    }
+  }
+}
+
+.closeDrawerButton{
+  background-color: transparent;
+  border:none;
+  display: flex;
+  align-self: self-end;
+  color: white;
+}
+.drawer__image {
+  max-width: var(--drawer-width);
+  justify-self: center;
+  align-self: center;
+  width: 90%;
+}
+.drawer__buttonContainer{
   width: 100%;
-  background-color: var(--color-primary);
-  margin: 0;
+}
+.drawer__item{
+  font-family: 'Poppins';
+  font-size: clamp(1rem, 1.2rem + 1.5vw, 1.5rem);
+  font-weight: 300;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.6rem 0 0.6rem 0; 
+  font-family: 'Poppins';
+  border-radius: var(--border-radius);
+  background-color: var(--color-cuaternary);
+  border: none;
+  border: 1px solid white;
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.drawer__item:hover{
+  background-color: white;
+  color: var(--color-cuaternary);
+}
+
+/*
+Overlay
+*/
+
+/* Estilos del overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+/* Contenido del overlay */
+.overlay-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 90%;
+  font-family: 'Poppins';
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* No más del 90% de la altura de la ventana gráfica */
+  overflow-y: auto;
+  z-index: 1000 !important;
+}
+
+.overlay-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.overlay-header h2{
+  font-weight: 600;
+}
+
+.close-overlay-button {
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--color-cuaternary);
+  margin-left: auto;
+}
+
+/* Formulario y elementos */
+.overlay-content form {
+  margin-top: 10px;
+}
+
+.overlay-content label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+.overlay-content input {
+  width: 100%;
+  padding: 0.5rem 0.2rem;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid var(--color-placeholder);
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.overlay-content label {
+  font-weight: 600;
+}
+
+.overlay-content input[type="text"]:focus {
+  border-bottom: 2px solid var(--color-cuaternary);
+}
+
+.overlay_form input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.overlay_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 35vh;
-  border-radius: 0% 0% 45% 45%;
+  align-items: center;
 }
 
-.drawer__image__bottom{
-  position: relative;
+.overlay_form div, .overlay_form label, .overlay_form p{
+  margin-right: auto;
+}
+
+.submit-button {
+  background-color: var(--color-cuaternary);
+  color: white;
+  border: none;
   width: 100%;
-  top: 20%;
-  border-radius: 100%;
-  height: 10vh;
-  background-color: rgba(255, 187, 61, 0.619);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 20px;
+  max-width: 20rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-
-.drawer a {
-  color: rgb(0, 0, 0);
+.submit-button:hover {
+  background-color:  var(--color-primary-focused);
+  color: white;
 }
 
-.drawer__image {
-  max-width: 300px;
-  height: min-content;
-  justify-self: center;
-  align-self: center;
+/* Mostrar el overlay */
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
 }
-
-.drawer__item{
-  font-family: 'Poppins';
-  font-size: 100px;
+.file-upload-wrapper {
   width: 100%;
-  padding: 80px;
-  text-align: center; 
-  margin-top: 8vh;
 }
 
-.nav-link:hover{
-  color: rgb(242, 234, 11);
-  transition: all 0.3s ease;
-  opacity: 1%;
+.file-upload-button {
+  color: white;
+  background-color: var(--color-cuaternary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.drawer__item hover{
-  color: rgb(41, 40, 40);
+input[type="file"] {
+  width: 100%;
+  border: none;
 }
 
-.drawer__item span{
-  font-family: 'Poppins';
-  font-size: 2em;
-  font-weight: 300;
-}
-
-.drawer__item i{
-  width: 40px;
-  height: 40px;
-}
 
 .header{
   background-color: var(--color-primary);
   height: 120px;
   display: flex;
   justify-content: center;
+  padding:  0 1rem;
+  align-items: center;
   width: 100%;
 }
 
@@ -111,24 +262,26 @@ body {
   padding: 0;
   align-self: center;
   height: 80%;
+  margin-right: auto;
 }
 
 .header__button{
-  position: relative;
-  right: 45%;
-  top: 30%;
-  background-color: var(--color-tertiary);
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+  background-color: transparent;
+  color: white;
   border: none;
-  display: flex;
-  align-items: center;
+  padding: 10px 20px 10px 20px;
+  border-radius: var(--border-radius);
+  margin-right: auto;
+}
+
+.header__button:hover{
+  background-color: var(--color-primary-focused);
 }
 
 
 .header_button_img{
   width: 100%;
+  color: white;
 }
 
 /*Body*/

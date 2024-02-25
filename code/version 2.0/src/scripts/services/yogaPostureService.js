@@ -40,6 +40,10 @@ export default class YogaPostureService {
         this._yogaPostures.push(yogaPosture);
     }
 
+    addPosture(yogaPosture) {
+        this._yogaPostures.push(yogaPosture);
+    }
+
     getPostures() {
         return this._yogaPostures;
     }
