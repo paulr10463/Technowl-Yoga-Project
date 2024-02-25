@@ -9,4 +9,5 @@ export default class Morpheme {
     getMeaning(){
         return this._meaning
     }
+
 }

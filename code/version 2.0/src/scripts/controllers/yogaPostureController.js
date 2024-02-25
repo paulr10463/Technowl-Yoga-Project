@@ -15,7 +15,6 @@ export default class YogaPostureController {
             }
         }else{
             const result = this._model.getPosturesBySimilarNames(postureNameToSearch, 2);
-            console.log(result);
             if(result.length > 0){  
                 this._view.displayPosturesSuggestions(result);
             }else{

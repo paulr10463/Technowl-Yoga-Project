@@ -37,3 +37,21 @@ export function calculateLevenshteinDistance(a, b) {
 
   return distanceMatrix[a.length][b.length];
 }
+
+export function getBase64Image(img, callback) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+      callback(e.target.result);
+  };
+  reader.readAsDataURL(img);
+}
+
+export function toggleDrawer() {
+  const drawer = document.querySelector('.drawer');
+
+  if (drawer.style.left === '0px') {
+    drawer.style.left = '-350px';
+  } else {
+    drawer.style.left = '0';
+  }
+}

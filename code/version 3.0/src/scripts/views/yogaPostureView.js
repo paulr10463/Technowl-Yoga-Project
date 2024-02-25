@@ -1,5 +1,6 @@
 import firstLetterUppercase from '../utils.js';  
 import Swal from 'sweetalert2';
+import { toggleDrawer } from '../utils.js';
 
 export default class YogaPosturesView {
     constructor() {
@@ -11,6 +12,25 @@ export default class YogaPosturesView {
         this._sanskritTranslation = document.getElementById("SanskritTranslationResult");
         this._picture = document.getElementById("PosturePicture");
         this._videoContainer = document.getElementById("PostureVideo");
+
+        //Input Postures
+        this._poseInputSanskrit = document.getElementById('poseInputSanscrito');
+        this._poseInputEnglish = document.getElementById('poseInputIngles');
+        this._poseInputSpanish = document.getElementById('poseInputEspanol');
+        this._poseInputImage = document.getElementById('poseInputImagen');
+        this._poseInputURL = document.getElementById('poseInputVideo');
+        this._addPoseButton = document.getElementById('submitPoseButton');
+
+        //Pose Overlay
+        document.getElementById('closePoseOverlay').addEventListener('click', function() {
+            document.getElementById('PoseOverlay').classList.remove('show');
+        });
+        
+        document.getElementById('showPoseOverlay').addEventListener('click', function() {
+            document.getElementById('PoseOverlay').classList.add('show');
+            toggleDrawer();
+        });
+        
     }
 
     displayPostureTranslations(yogaPosture) {
@@ -21,13 +41,14 @@ export default class YogaPosturesView {
         this._sanskritTranslation.innerHTML = firstLetterUppercase(yogaPosture.getSanskritName());
         const mainRightContainer = document.getElementById("MainRight");
         const mainLeftContainer = document.getElementById("MainLeft");
+        console.log(yogaPosture.getURL());
         if(yogaPosture.getURL() == undefined) {
             mainRightContainer.style.display = "none";
             mainLeftContainer.style.width = "100%";
         }else{
             mainRightContainer.style.display = "flex";
             mainLeftContainer.style.width = "70%";
-            this._picture.src = "images/PosturesImages/" + yogaPosture.getSanskritName() + ".jpg";
+            this._picture.src = yogaPosture.getImage()==""?"images/PosturesImages/" + yogaPosture.getSanskritName() + ".jpg" : yogaPosture.getImage();
             this._videoContainer.innerHTML = 
             `<iframe class="video__player" src="${yogaPosture.getURL()}"
             title="YouTube video player" frameborder="0"
@@ -41,11 +62,29 @@ export default class YogaPosturesView {
         return this._yogaPostureInput.value;
     }
 
-    addYogaPostureHandler(callback) {
+    closePoseOverlay() {
+        document.getElementById('PoseOverlay').classList.remove('show');
+    }
+
+    searchPostureHandler(callback) {
         this._submitButton.addEventListener('click', (event) => {
             event.preventDefault();
             const yogaPostureNameInput = this.getYogaPostureName();
             callback(yogaPostureNameInput);
+        });
+    }
+
+    addPostureHandler(callback) {
+        this._addPoseButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const yogaPostureData = {
+                english: this._poseInputEnglish.value,
+                sanskrit: this._poseInputSanskrit.value,
+                spanish: this._poseInputSpanish.value,
+                image: this._poseInputImage.files[0],
+                url: this._poseInputURL.value
+            }
+            callback(yogaPostureData);
         });
     }
 
@@ -68,6 +107,30 @@ export default class YogaPosturesView {
             icon: "error",
             title: "¡Oops! Parece que la postura que buscas no se encuentra disponible.",
             text: 'Por favor, verifica la información e inténtalo de nuevo.',
+          });
+    }
+
+    displayPostureNotFound() {
+        Swal.fire({
+            icon: "error",
+            title: "¡Oops! Parece que la postura que buscas no se encuentra disponible.",
+            text: 'Por favor, verifica la información e inténtalo de nuevo.',
+          });
+    }
+
+    
+    displayPostureAdded() {
+        Swal.fire({
+            icon: "success",
+            title: "¡Postura añadida!",
+          });
+    }
+
+    displayPostureAddedFailed(errorMessage) {
+        Swal.fire({
+            icon: "error",
+            title: "¡Oops! Parece que la postura no se pudo agregar",
+            text: errorMessage,
           });
     }
 

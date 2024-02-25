@@ -43,13 +43,13 @@
            
             <form id="morfemaForm" class="overlay_form">
                 <label for="morphemInputSanscrito">Sánscrito</label>
-                <input type="text" id="morphemInputSanscrito" name="sanscrito" placeholder="Vriksha, asana">
+                <input type="text" id="morphemInputSanscrito" name="sanscrito" placeholder="Vriksha, asana" required>
 
                 <label for="morphemInputIngles">Inglés</label>
-                <input type="text" id="morphemInputIngles" name="ingles" placeholder="Tree, Pose">
+                <input type="text" id="morphemInputIngles" name="ingles" placeholder="Tree, Pose" required>
 
-                <label for="MorphemInputEspanol">Español</label>
-                <input type="text" id="MorphemInputEspanol" name="espanol" placeholder="Árbol, pose">
+                <label for="morphemInputEspanol">Español</label>
+                <input type="text" id="morphemInputEspanol" name="espanol" placeholder="Árbol, pose" required>
 
                 <button type="submit" class="submit-button" id="submitMorphemButton">Aceptar</button>
             </form>
@@ -78,10 +78,9 @@
                 <label for="imagen">Imagen</label>
                 <p>Carga una imagen que muestre cómo hacer la postura</p>
                 <div class="file-upload-wrapper">
-                    <input type="file" id="poseInputImagen" name="imagen" />
+                    <input type="file" accept="image/*" id="poseInputImagen" name="imagen" />
                 </div>
                 
-
                 <label for="video">Video</label>
                 <p>Carga el link embebido del video que muestre cómo hacer la postura </p>
                 <input type="text" id="poseInputVideo" name="video" placeholder="https://www.youtube.com/embed/FEH3YU02bDo?si=WFB_qnCQiVhA3ATb">
