@@ -78,14 +78,22 @@ export default class YogaPosturesView {
         this._addPoseButton.addEventListener('click', (event) => {
             event.preventDefault();
             const yogaPostureData = {
-                english: this._poseInputEnglish.value,
-                sanskrit: this._poseInputSanskrit.value,
-                spanish: this._poseInputSpanish.value,
+                english: this._poseInputEnglish.value.trim().toLowerCase(),
+                sanskrit: this._poseInputSanskrit.value.trim().toLowerCase(),
+                spanish: this._poseInputSpanish.value.trim().toLowerCase(),
                 image: this._poseInputImage.files[0],
-                url: this._poseInputURL.value
+                url: this._poseInputURL.value.trim()
             }
             callback(yogaPostureData);
         });
+    }
+
+    cleanFormFields() {
+        this._poseInputEnglish.value = '';
+        this._poseInputSanskrit.value = '';
+        this._poseInputSpanish.value = '';
+        this._poseInputImage.value = '';
+        this._poseInputURL.value = '';
     }
 
     displayPosturesSuggestions(suggestionsList){

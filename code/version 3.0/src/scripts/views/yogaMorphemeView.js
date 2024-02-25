@@ -23,6 +23,12 @@ export default class YogaMorphemesView {
         });
     }
     
+    cleanFormFields() {
+        this._yogaMorphemeSanskrit.value = '';
+        this._yogaMorphemeSpanish.value = '';
+        this._yogaMorphemeEnglish.value = '';
+    }
+    
     addMorphemeHandler(callback) {
         this._submitButton.addEventListener('click', (event) => {
             event.preventDefault();

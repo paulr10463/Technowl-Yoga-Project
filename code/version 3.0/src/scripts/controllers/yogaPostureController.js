@@ -1,5 +1,6 @@
 import YogaPosture from "../models/yogaPosture.js";
 import YogaPosturesView from "../views/yogaPostureView.js";
+import {convertYoutubeLinkToEmbed, isImage} from "../utils.js";
 
 export default class YogaPostureController {
     constructor(model, modelMorphemes, view) {
@@ -30,10 +31,21 @@ export default class YogaPostureController {
     
     addYogaPose(yogaPostureData){
         try{
-            console.log(yogaPostureData);
+            const requiredFields = ['english', 'sanskrit', 'spanish', 'image', 'url'];
+            for (const field of requiredFields) {
+                if (!yogaPostureData[field]) {
+                    throw new Error(`El campo '${field}' es requerido y no puede estar vacío.`);
+                }
+            }
+            if (!isImage(yogaPostureData.image.name)) {
+                throw new Error("El campo 'image' debe ser una imagen válida.");
+            }   
+            const embedLink = convertYoutubeLinkToEmbed(yogaPostureData.url);
+            yogaPostureData.url = embedLink
             this._model.addPose(yogaPostureData);
             this._view.displayPostureAdded();
             this._view.closePoseOverlay();
+            this._view.cleanFormFields();
         }catch(error){
             this._view.displayPostureAddedFailed(error.message);
         }

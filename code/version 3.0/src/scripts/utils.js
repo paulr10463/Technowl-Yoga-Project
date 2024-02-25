@@ -55,3 +55,17 @@ export function toggleDrawer() {
     drawer.style.left = '0';
   }
 }
+
+export function convertYoutubeLinkToEmbed(url) {
+  const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const coincidencia = url.match(regex);
+  if (coincidencia && coincidencia[1]) {
+      return `https://www.youtube.com/embed/${coincidencia[1]}`;
+  } else {
+      throw new Error('El enlace no es válido');
+  }
+}
+
+export function isImage(url) {
+  return /\.(jpg|jpeg|png|gif)$/i.test(url);
+}

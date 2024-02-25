@@ -10,11 +10,17 @@ export default class MorphemeController {
 
     addMorpheme(morphemeValues) {
         try{
+            const requiredFields = ['english', 'sanskrit', 'spanish'];
+            for (const field of requiredFields) {
+                if (!morphemeValues[field]) {
+                    throw new Error(`El campo '${field}' es requerido y no puede estar vacío.`);
+                }
+            }   
             this._model.addMorpheme(morphemeValues);
-            console.log(morphemeValues);
             this._posesModel.addMorphemeToPoses(morphemeValues);
             this._view.displayMorphemeAdded();
             this._view.closeMorphemeOverlay();
+            this._view.cleanFormFields();
         }
         catch(error){
             this._view.displayMorphemeAddedFailed(error.message);
