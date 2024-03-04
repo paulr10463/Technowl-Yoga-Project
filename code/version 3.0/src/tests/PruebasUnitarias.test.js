@@ -1,4 +1,5 @@
 import YogaPostureService from '../scripts/services/yogaPostureService.js';
+import YogaPosturesView from '../scripts/views/yogaPostureView.js';
 import YogaPostureView from '../scripts/views/yogaPostureView.js';
 
 test('search tadasana name and return postura de la montania', () => {
@@ -89,4 +90,77 @@ test('search tadasana name and return postura de la montania', () => {
     const end = Date.now();
     const duration = end - start;
     expect(duration).toBeLessThan(100);
+  });
+  
+  describe('YogaPosturesView', () => {
+    let view;
+  
+    beforeEach(() => {
+      // Set up our document body
+      document.body.innerHTML = `
+        <div id="PoseOverlay"></div>
+        <button id="closePoseOverlay"></button>
+        <button id="showPoseOverlay"></button>
+        <input id="postureNameInput" />
+        <button id="submitButton" />
+        <div id="morphemesTable"></div>
+        <div id="EnglishTranslationResult"></div>
+        <div id="SpanishTranslationResult"></div>
+        <div id="SanskritTranslationResult"></div>
+        <img id="PosturePicture" />
+        <div id="PostureVideo"></div>
+        <input id="poseInputSanscrito" />
+        <input id="poseInputIngles" />
+        <input id="poseInputEspanol" />
+        <input id="poseInputImagen" type="file" />
+        <input id="poseInputVideo" />
+        <button id="submitPoseButton"></button>
+      `;
+      view = new YogaPosturesView();
+    });
+  
+    test('should initialize DOM elements correctly', () => {
+      expect(view._yogaPostureInput).not.toBeNull();
+      expect(view._submitButton).not.toBeNull();
+    });
+  
+    test('should attach event listener to closePoseOverlay button', () => {
+      document.getElementById('closePoseOverlay').click();
+      expect(document.getElementById('PoseOverlay').classList.contains('show')).toBeFalsy();
+    });
+  });
+
+  describe('getPostureByName', () => {
+    const yogaPostureService = new YogaPostureService();
+  
+    test('returns correct posture for a given name', () => {
+      const postureName = 'Tadasana'; 
+      const expectedEnglishName = 'Mountain Pose';
+      const posture = yogaPostureService.getPostureByName(postureName);
+      expect(posture).not.toBeNull();
+      expect(posture.getEnglishName()).toBe(expectedEnglishName);
+    });
+  });
+
+ 
+
+  describe('getPosturesBySimilarNames', () => {
+    const yogaPostureService = new YogaPostureService();
+  
+    test('returns similar posture names within a threshold', () => {
+      const similarNames = yogaPostureService.getPosturesBySimilarNames('Tadasna', 2);
+      expect(similarNames.includes('Tadasana')).toBeTruthy();
+    });
+  });
+  describe('_getPosesFromLocalStorage', () => {
+    const yogaPostureService = new YogaPostureService();
+  
+    test('retrieves poses from local storage', () => {
+      const mockPoses = [{ english: 'Mock Pose', sanskrit: '', spanish: '', image: null, url: '' }];
+      localStorage.setItem('posesList', JSON.stringify(mockPoses));
+  
+      const poses = yogaPostureService._getPosesFromLocalStorage(); 
+      expect(poses.length).toBe(1);
+      expect(poses[0].english).toBe('Mock Pose');
+    });
   });
