@@ -36,14 +36,44 @@ Considerando esto, se puede apreciar que la clase YogaPostureController es el ne
   <em>Figura 2: Diagrama de clases del sistema de traducción</em>
 </p>
 
-En la Figura 3 se puede observar una representación visual del diseño del proyecto. Esto se usa comúnmente en diseño gráfico y desarrollo de productos para dar una vista previa de cómo se verá el producto final para esta ocasion se uso para mostrar la version 2.0 del proyecto realizado. Los mockups pueden ser estáticos o interactivos, y suelen ser herramientas valiosas en el proceso de diseño para obtener retroalimentación antes de la implementación final. 
+En la Figura 3 se puede observar una representación visual del diseño del proyecto. Esto se usa comúnmente en diseño gráfico y desarrollo de productos para dar una vista previa de cómo se verá el producto final para esta ocasion se uso para mostrar la version 3.0 del proyecto realizado. Los mockups pueden ser estáticos o interactivos, y suelen ser herramientas valiosas en el proceso de diseño para obtener retroalimentación antes de la implementación final. 
 
 <p align="center">
-  <img src="assets/Mockup.png" alt="Mockup del sistema">
+  <img src="assets/Postura.png" alt="Mockup del sistema">
 </p>
 
 <p align="center">
   <em>Figura 3: Mockup del sistema de traducción</em>
+</p>
+
+En la Figura 4 se observa una representación visual específica que ofrece dos opciones principales para el usuario: "Añadir Posturas" y "Añadir Morfemas". 
+
+<p align="center">
+  <img src="assets/Añadir.png" alt="Añadir">
+</p>
+
+<p align="center">
+  <em>Figura 4: Añadir posturas y morfemas</em>
+</p>
+
+En la Figura 5  se aprecia la función que permite a los usuarios ingresar nuevas posturas de yoga al repertorio de la aplicación. Esto podría ser útil para maestros de yoga que deseen ampliar la variedad de posturas disponibles para enseñar o practicar.
+
+<p align="center">
+  <img src="assets/NuevaPostura.png" alt="Añadir Posturas">
+</p>
+
+<p align="center">
+  <em>Figura 5: Añadir posturas</em>
+</p>
+
+En la Figura 6 se muestra un diseño para que los usuarios ingresen y registren los datos del nuevo morfema en sánscrito, inglés y español.
+
+<p align="center">
+  <img src="assets/NuevoMorfema.png" alt="Añadir Posturas">
+</p>
+
+<p align="center">
+  <em>Figura 6: Añadir morfemas</em>
 </p>
 
 Además, se adjunta el enlace donde se desarrollo el diseño del sistema de traducción:
